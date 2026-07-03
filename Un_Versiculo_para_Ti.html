@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Un Versículo para Ti</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;display:flex;justify-content:center;align-items:center;min-height:100vh}
+.card{background:#fff;max-width:650px;width:92%;padding:30px;border-radius:18px;box-shadow:0 8px 24px rgba(0,0,0,.15);text-align:center}
+button{background:#2d6cdf;color:#fff;border:none;padding:14px 28px;border-radius:10px;font-size:18px;cursor:pointer}
+#v{margin-top:25px;font-style:italic;font-size:22px;line-height:1.6}
+#r{margin-top:10px;font-weight:bold}
+#e{margin-top:20px;color:#444;line-height:1.6}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>📖 Un Versículo para Ti</h1>
+<p><strong>Gracias por dedicar unos segundos a leer la Palabra de Dios. Pulsa el botón y descubre un versículo de la Biblia.</strong></p>
+<button onclick="nuevo()">Leer un versículo</button>
+<div id="v"></div>
+<div id="r"></div>
+<div id="e"></div>
+</div>
+<script>
+const versos=[{"text": "Porque de tal manera amó Dios al mundo, que ha dado a su Hijo unigénito, para que todo aquel que en él cree no se pierda, mas tenga vida eterna.", "ref": "Juan 3:16 (Reina-Valera 1909)", "exp": "Dios te ama y desea que conozcas a Jesucristo. En Él hay esperanza y vida."}, {"text": "Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar.", "ref": "Mateo 11:28 (Reina-Valera 1909)", "exp": "Jesús invita a acercarte a Él con tus cargas. Puedes venir tal como estás."}, {"text": "Echando toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.", "ref": "1 Pedro 5:7 (Reina-Valera 1909)", "exp": "No tienes que llevar tus preocupaciones solo. Dios se interesa por ti."}, {"text": "No temas, porque yo estoy contigo; no desmayes, porque yo soy tu Dios que te esfuerzo.", "ref": "Isaías 41:10 (Reina-Valera 1909)", "exp": "Cuando aparece el miedo, Dios promete estar presente y dar fuerzas."}, {"text": "Jehová es mi pastor; nada me faltará.", "ref": "Salmo 23:1 (Reina-Valera 1909)", "exp": "Dios quiere guiar tu vida y cuidar de ti cada día."}, {"text": "La paz os dejo, mi paz os doy; yo no os la doy como el mundo la da.", "ref": "Juan 14:27 (Reina-Valera 1909)", "exp": "La paz que ofrece Jesús va más allá de las circunstancias."}, {"text": "Buscad a Jehová mientras puede ser hallado, llamadle en tanto que está cercano.", "ref": "Isaías 55:6 (Reina-Valera 1909)", "exp": "Hoy es un buen momento para acercarte a Dios y conocerle."}, {"text": "Porque la paga del pecado es muerte; mas la dádiva de Dios es vida eterna en Cristo Jesús Señor nuestro.", "ref": "Romanos 6:23 (Reina-Valera 1909)", "exp": "Dios ofrece gratuitamente el regalo de la vida eterna por medio de Jesucristo."}];
+function nuevo(){
+ const x=versos[Math.floor(Math.random()*versos.length)];
+ document.getElementById('v').textContent='“'+x.text+'”';
+ document.getElementById('r').textContent=x.ref;
+ document.getElementById('e').innerHTML='<b>Reflexión</b><br><br>'+x.exp;
+}
+</script>
+</body>
+</html>
